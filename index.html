@@ -6,6 +6,33 @@
     <title>Steno Museet Interaktiv Storytelling</title>
 </head>
 <body>
+        <img id="burgericon" src="images/burgericon.png" alt="Burger Icon">
+    
+        <nav id="menu">
+            <a id="close" href="#" style="text-align:right">X</a>
+            <a href="#" id="start-link">Start forfra</a>
+    
+            <!-- Sprogskifte dropdown -->
+            <div>
+                <label for="language-select">Vælg sprog:</label>
+                <select id="language-select">
+                    <option value="da">Dansk</option>
+                    <option value="en">English</option>
+                </select>
+            </div>
+    
+            <!-- Mute-knap -->
+            <button id="mute-button">🔇 Slå lyd til</button>
+        </nav>
+    
+        <!-- Baggrundslyd -->
+        <audio id="background-audio" autoplay loop muted>
+            <source src="audio/happy.mp3" type="audio/mpeg">
+        </audio>
+    
+        <main>
+            <h1 id="headline">Hej med dig</h1>
+        </main>
     <h1>Welcome to Steno Museet Interactive Storytelling</h1>
     <p>This is the starting point for your project.</p>
 </body>
