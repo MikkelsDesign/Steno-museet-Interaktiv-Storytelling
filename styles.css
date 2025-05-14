@@ -4,6 +4,7 @@ body {
     margin: 0;
     padding: 0;
     background-color: #f5f5f5;
+    height: 100%;
 }
 
 /* Burgerikon */
@@ -86,4 +87,38 @@ main {
   #mute-button:hover {
     background-color: #ddd;
   } 
+
+  /******** S T A R T S K Æ R M *********/
+  /* Billedet fylder hele skærmen og ligger bagved vores knap */
+#himmel {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 30%;
+    z-index: -1;
+}
+
+/* button stilen - størrelae, samt farve og animation */
+.start-btn {
+    position: relative;
+    top: 50%; /* centrere knappen 50% fra toppen af skærmen*/
+    left: 50%; /* centrere knappen 50% fra venstre side af skærmen*/
+    padding: 50px 100px; /* 50px høj og 100px bred*/      
+    font-size: 4rem;  
+    background-color: #003D85;
+    border: none;
+    color: white;
+    animation: puls 1s infinite ease-in-out; /* den giver en puls bevægelse til knappen hvert sekund, og bliver ved uendeligt */
+}
+
+
+/* puls effekt på knap */
+@keyframes puls {
+    0% { transform: translate(-50%, -50%) scale(1); } /* knappen originale størelse */
+    50% { transform: translate(-50%, -50%) scale(1.1); }
+    100% { transform: translate(-50%, -50%) scale(1); } /* knappen største størelse */
+}
 
