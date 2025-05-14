@@ -1,0 +1,52 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background: #222;
+    color: white;
+    font-family: sans-serif;
+  }
+  
+  #game {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    background: #333;
+  }
+  
+  .player, .block {
+    position: absolute;
+    width: 65px;
+    height: 65px;
+    background-image: url('heart.png'); /* Replace with the actual heart PNG file path */
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+  
+  #player {
+    position: absolute;
+    width: 70px;
+    height: 70px;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  
+  .controls {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+  }
+  
+  button {
+    font-size: 24px;
+    margin-right: 5px;
+  }
+  
+  #scoreboard {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    font-size: 18px;
+  }
+  
