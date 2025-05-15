@@ -123,4 +123,40 @@ main {
       100% { transform: translate(-50%, -50%) scale(1); } /* knappen største størelse */
   }
 
-  /* intro til spil styles */
+ /* intro til spil styles */
+
+ .centerbox {
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 80%;
+    max-width: 900px;
+    background-color: #D7811E;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    padding: 20px;
+    text-align: center;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .infotekst{
+    font-size: 1.5rem;
+    color: #fff;
+  }
+
+  .hjerteikon {
+    width: 200px;
+    height: auto;
+
+  }
+
+  .startgameknap {
+    width: 200px;
+    margin-top: 400px;
+  }
+
