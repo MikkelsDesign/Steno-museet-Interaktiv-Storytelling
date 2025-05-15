@@ -104,16 +104,15 @@ main {
 /* button stilen - størrelae, samt farve og animation */
 .start-btn {
     position: relative;
-    top: 50%; /* centrere knappen 50% fra toppen af skærmen*/
-    left: 50%; /* centrere knappen 50% fra venstre side af skærmen*/
-    padding: 50px 100px; /* 50px høj og 100px bred*/      
+    top: 50%; /* centrere knappen 50% fra toppen af skærmen */
+    left: 50%; /* centrere knappen 50% fra venstre side af skærmen */
+    padding: 50px 100px; /* 50px høj og 100px bred */      
     font-size: 4rem;  
     background-color: #003D85;
     border: none;
     color: white;
     animation: puls 1s infinite ease-in-out; /* den giver en puls bevægelse til knappen hvert sekund, og bliver ved uendeligt */
 }
-
 
 /* puls effekt på knap */
 @keyframes puls {
