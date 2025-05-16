@@ -1,13 +1,11 @@
 /* Generelle styles */
-html,body {
+body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
     background-color: #f5f5f5;
     height: 100%;
 }
-
-
 /* Burgerikon */
 #burgericon {
     width: 40px;
@@ -91,7 +89,7 @@ main {
 
   /******** S T A R T S K Æ R M *********/
   /* Billedet fylder hele skærmen og ligger bagved vores knap */
-  #himmel {
+  #ur {
       position: absolute;
       top: 0;
       left: 0;
