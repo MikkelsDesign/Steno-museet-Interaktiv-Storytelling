@@ -1,5 +1,5 @@
 /* Generelle styles */
-body {
+ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
@@ -102,7 +102,7 @@ main {
   
   /* button stilen - størrelae, samt farve og animation */
   .start-btn {
-      position: relative;
+      position: absolute;
       top: 50%; /* centrere knappen 50% fra toppen af skærmen*/
       left: 50%; /* centrere knappen 50% fra venstre side af skærmen*/
       padding: 50px 100px; /* 50px høj og 100px bred*/      
