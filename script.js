@@ -27,7 +27,7 @@ startBtn.addEventListener('click', () => {
     
     // Add source to video
     const source = document.createElement('source');
-    source.src = '/Video/Steno Video 2.mp4'; 
+    source.src = '/Video/Steno Video 3.mp4'; 
     source.type = 'video/mp4';
     
     video.appendChild(source);
@@ -41,7 +41,7 @@ startBtn.addEventListener('click', () => {
         element.style.opacity = '0';
     });
     
-    // After fade out, play video
+  // After fade out, play video
     setTimeout(() => {
         elementsToFade.forEach(element => {
             element.style.display = 'none';
@@ -49,17 +49,11 @@ startBtn.addEventListener('click', () => {
         videoContainer.style.opacity = '1';
         video.play();
         
-        // Optional: Unmute audio if it's currently muted
-        if (audio.muted) {
-            audio.muted = false;
-            muteButton.textContent = "🔈 Slå lyd fra";
-        }
-    }, 1000);
-    
-    // When video ends, redirect to game page or show the next screen
-    video.addEventListener('ended', () => {
-        window.location.href = 'spil1.html'; // Redirect to your game page
-    });
+        // When video ends, redirect to game page or show the next screen
+        video.addEventListener('ended', () => {
+            window.location.href = 'introTilSpil.html'; // Redirect to your game page
+        });
+    }, 1000); // Added timeout duration of 1000ms (1 second)
 });
 
 
