@@ -1,0 +1,58 @@
+/* Base page */
+body {
+  margin: 0;
+  font-family: sans-serif;
+  background: #f7f7f7;
+  color: #333;
+}
+
+main#leaderboard {
+  max-width: 500px;
+  margin: 3rem auto;
+  padding: 1rem;
+}
+
+/* Title uses the museum’s primary orange */
+main#leaderboard h1 {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+  color: #FEA743; /* orange */
+}
+
+/* The list */
+#leaderboard-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* Default row style (ranks 4+) */
+#leaderboard-list li {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.75rem 1rem;
+  margin-bottom: 0.5rem;
+  background: #FFCABC; /* passive orange */
+  border-radius: 4px;
+  font-size: 1.1rem;
+}
+
+/* 1st place – purple */
+#leaderboard-list li:nth-child(1) {
+  background: #AA95EC;
+  color: #fff;
+  font-weight: bold;
+}
+
+/* 2nd place – blue */
+#leaderboard-list li:nth-child(2) {
+  background: #7CBEFF;
+  color: #fff;
+}
+
+/* 3rd place – green */
+#leaderboard-list li:nth-child(3) {
+  background: #A4D5C9;
+  color: #fff;
+}

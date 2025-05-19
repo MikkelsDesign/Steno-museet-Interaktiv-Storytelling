@@ -1,9 +1,21 @@
 
+// ———————— 1) Helper: persist scores —————————
+function saveScoreToStorage(name, score) {
+  const key = 'stenoLeaderboard';
+  const entries = JSON.parse(localStorage.getItem(key) || '[]');
+  entries.push({ name, score });
+  localStorage.setItem(key, JSON.stringify(entries));
+}
+
 // -------------------- Setup og variabler -------------------
+function initGame() {
 
 const player = document.getElementById('player');
 const game = document.getElementById('game');
 const scoreBoard = document.getElementById('scoreboard');
+const overlay    = document.getElementById('gameover');
+const finalScore = document.getElementById('final-score');
+const toLB       = document.getElementById('to-leaderboard');
 
 let x = window.innerWidth / 2 - 20;
 let score = 0;
@@ -87,24 +99,60 @@ setInterval(() => {
 
 
 // nedtællings timer
-function tick() {
-  if (--time < 0) {
-    over = true;
-    // Instead of alert(), show overlay:
-    const go = document.getElementById('gameover');
-    document.getElementById('final-score').textContent = `Your Score: ${score}`;
-    go.classList.remove('hidden');
+  function tick() {
+    if (--time < 0) {
+      over = true;
 
-    // Wire up the button (once):
-    document.getElementById('to-leaderboard').addEventListener('click', () => {
-      window.location.href = 'leaderboard.html';
-    });
-  } else {
-    updateScoreboard();
-    setTimeout(tick, 1000);
+      // show overlay + score
+      finalScore.textContent = `Your Score: ${score}`;
+      overlay.classList.remove('hidden');
+
+      // prompt & save
+      const name = prompt('Skriv dit navn til leaderboardet:', 'Anon');
+      if (name !== null) {
+        saveScoreToStorage(name.trim() || 'Anon', score);
+      }
+
+      // button handler
+      toLB.addEventListener('click', () => {
+        window.location.href = 'leaderboard.html';
+      });
+
+    } else {
+      updateScoreboard();
+      setTimeout(tick, 1000);
+    }
   }
+
+
+
+
+// Start spillet
+player.style.left = x + 'px';
+player.style.bottom = '10px';
+loop();
+tick();s
+
 }
 
+// ------------------------------------LEADERBOARD----------------------------------
+
+
+function initLeaderboard() {
+  const listEl = document.getElementById('leaderboard-list');
+  if (!listEl) return;
+  const entries = JSON.parse(localStorage.getItem('stenoLeaderboard')||'[]')
+                      .sort((a,b)=>b.score - a.score);
+  entries.forEach((e,i) => {
+    const li = document.createElement('li');
+    li.innerHTML = `
+      <span class="rank">${i+1}.</span>
+      <span class="name">${e.name}</span>
+      <span class="score">${e.score}</span>
+    `;
+    listEl.appendChild(li);
+  });
+}
 
 // Collision check
 function collides(a, b) {
@@ -113,8 +161,16 @@ function collides(a, b) {
   return !(r1.right < r2.left || r1.left > r2.right || r1.bottom < r2.top || r1.top > r2.bottom);
 }
 
-// Start spillet
-player.style.left = x + 'px';
-player.style.bottom = '10px';
-loop();
-tick();
+
+// ———————— 5) Auto-init on DOMContentLoaded ——————
+document.addEventListener('DOMContentLoaded', () => {
+  // If your page has an element with id="game", start the game
+  if (document.getElementById('game')) {
+    initGame();
+  }
+
+  // If your page has an element with id="leaderboard-list", render it
+  if (document.getElementById('leaderboard-list')) {
+    initLeaderboard();
+  }
+});
