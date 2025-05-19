@@ -26,6 +26,7 @@ function aabenOgLukMenu() {
 const translations = {
     da: {
         headline: "Hej med dig"
+        
     },
     en: {
         headline: "Hello there"
