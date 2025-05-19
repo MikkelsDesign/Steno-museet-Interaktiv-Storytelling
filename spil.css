@@ -5,13 +5,19 @@ body, html {
     background: #222;
     color: white;
     font-family: sans-serif;
+   
   }
+#baggrund{
+ width: 100%;
+ height: 100%;
+ opacity: 0.2;
+}
   
   #game {
     position: relative;
     width: 100vw;
     height: 100vh;
-    background: #333;
+    background:#a66617;
   }
   
   .player, .block {
@@ -39,8 +45,11 @@ body, html {
   }
   
   button {
-    font-size: 24px;
-    margin-right: 5px;
+    font-size: 60px;
+    margin-right: 20px;
+    background-color: #8d1d06;
+    color: white;
+    border: none;
   }
   
   #scoreboard {
