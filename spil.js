@@ -13,7 +13,7 @@ let right = false; // den højre pil
 let over = false;
 
 function updateScoreboard() {
-  scoreBoard.textContent = `Score: ${score} | Time: ${time}`;
+  scoreBoard.textContent = `Point: ${score} | Tid: ${time}`;
 }
 
 // -------------------- player kontrol--------------------
