@@ -90,12 +90,21 @@ setInterval(() => {
 function tick() {
   if (--time < 0) {
     over = true;
-    alert('Game Over! Final Score: ' + score);
+    // Instead of alert(), show overlay:
+    const go = document.getElementById('gameover');
+    document.getElementById('final-score').textContent = `Your Score: ${score}`;
+    go.classList.remove('hidden');
+
+    // Wire up the button (once):
+    document.getElementById('to-leaderboard').addEventListener('click', () => {
+      window.location.href = 'leaderboard.html';
+    });
   } else {
     updateScoreboard();
     setTimeout(tick, 1000);
   }
 }
+
 
 // Collision check
 function collides(a, b) {
