@@ -34,3 +34,8 @@ muteButton.addEventListener("click", () => {
         audio.play(); // Nogle browsere kræver et play-kald efter unmute
     }
 });
+ 
+//start forfra//
+document.getElementById("start-link").addEventListener("click", function () {
+    window.location.href = "index.html"; // linker knappen til index 
+});

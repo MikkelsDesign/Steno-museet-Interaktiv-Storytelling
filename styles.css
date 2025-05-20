@@ -69,9 +69,18 @@ main {
     transition: background-color 0.2s ease;
     border: none;
   }
-  #mute-button:hover {
-    background-color: #ddd;
-  } 
+
+  /*startforfra knap*/
+  #start-link {
+    font-size: 0.8rem;
+    padding: 4px 8px;
+    margin-top: 20px;
+    background-color: #8d1d06;
+    color: #ffffff;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    border: none;
+  }
 
   /******** S T A R T S K Æ R M *********/
   /* Billedet fylder hele skærmen og ligger bagved vores knap */
