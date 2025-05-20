@@ -1,44 +1,8 @@
-@font-face {
-  font-family: 'AUPassata';
-  src: url('./font/AUPassata_Rg.ttf') format('truetype');
-  font-weight: normal;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'AUPassata';
-  src: url('./font/AUPassata_Bold.ttf') format('truetype');
-  font-weight: bold;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'AUPassata';
-  src: url('./font/AUPassata_Light.ttf') format('truetype');
-  font-weight: 300;
-  font-style: normal;
-}
-
-body, html {
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    background: #222;
-    color: white;
-    font-family: 'AUPassata', Arial, sans-serif;
-   
-  }
-#baggrund{
- width: 100%;
- height: 100%;
- opacity: 0.2;
-}
   
   #game {
     position: relative;
     width: 100vw;
     height: 100vh;
-    background:#a66617;
   }
   
   .player, .block {
@@ -76,9 +40,9 @@ body, html {
   
   #scoreboard {
     position: absolute;
-    top: 10px;
-    left: 10px;
-    font-size: 18px;
+    top: 20px;
+    left: 20px;
+    font-size: 30px;
   }
 /* Overlay backdrop */
 #gameover {
@@ -107,6 +71,7 @@ body, html {
   max-width: 320px;          /* optional, for nicer layout */
   width: 90%;                /* responsive */
   box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  font-family: 'AUPassata';
 }
 
 /* Heading in a warm accent */

@@ -3,18 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="spil.css">
+    <link rel="stylesheet" href="Mainstyle.css">
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="spil.css">
+    <script src="Canvas.js" defer></script>
     <script src="spil.js" defer></script>
     <script src="script.js" defer></script>
     <title>Steno Museet Interaktiv Storytelling</title>
 </head>
 <body>
-  
+  <canvas id="webCanvas"></canvas>
 
     <div id="game">
-      <img id="baggrund" src="img/ur.jpg" alt="Baggrundsbillde som et ur" />
-        <img id="player" src="img/ægte hjerte - ikon.png" alt="Player" />
+        <img id="player" src="img/ægte-hjerte-ikon.png" alt="Player">
       </div>
 
       <!-- Game Over Overlay -->
@@ -22,7 +23,7 @@
   <div class="go-content">
     <h1>Game Over</h1>
     <p id="final-score"></p>
-    <button id="to-leaderboard">Go to Leaderboard</button>
+    <button id="to-leaderboard">Til Leaderboardet</button>
   </div>
 </div>
 

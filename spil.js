@@ -43,6 +43,31 @@ document.addEventListener('keyup', e => {
   }
 });
 
+
+// -------------------- controls på skærm  --------------------
+const leftBtn = document.getElementById('left');
+const rightBtn = document.getElementById('right');
+
+if (leftBtn && rightBtn) {
+  // venstre knap
+  leftBtn.addEventListener('mousedown', () => left = true);
+  leftBtn.addEventListener('mouseup', () => left = false);
+  leftBtn.addEventListener('mouseleave', () => left = false); // if mouse leaves while holding
+  leftBtn.addEventListener('touchstart', e => { e.preventDefault(); left = true; });
+  leftBtn.addEventListener('touchend', e => { e.preventDefault(); left = false; });
+
+  // højre knap
+  rightBtn.addEventListener('mousedown', () => right = true);
+  rightBtn.addEventListener('mouseup', () => right = false);
+  rightBtn.addEventListener('mouseleave', () => right = false);
+  rightBtn.addEventListener('touchstart', e => { e.preventDefault(); right = true; });
+  rightBtn.addEventListener('touchend', e => { e.preventDefault(); right = false; });
+}
+
+//  mousedown/mouseup: computer controls
+//  touchstart/touchend: Mobil controls
+//  mouseleave: gør at player stopper når man slipper knappen
+
 // -------------------- generalt spillet --------------------
 
 
@@ -104,13 +129,13 @@ setInterval(() => {
       over = true;
 
       // show overlay + score
-      finalScore.textContent = `Your Score: ${score}`;
+      finalScore.textContent = `Din Score: ${score}`;
       overlay.classList.remove('hidden');
 
       // prompt & save
-      const name = prompt('Skriv dit navn til leaderboardet:', 'Anon');
+      const name = prompt('Skriv dit navn til leaderboardet:', 'Navn');
       if (name !== null) {
-        saveScoreToStorage(name.trim() || 'Anon', score);
+        saveScoreToStorage(name.trim() || 'Navn', score);
       }
 
       // button handler
@@ -131,7 +156,7 @@ setInterval(() => {
 player.style.left = x + 'px';
 player.style.bottom = '10px';
 loop();
-tick();s
+tick();
 
 }
 
