@@ -25,7 +25,8 @@ for (let i = 0; i < nodeCount; i++) {
 }
 
 function drawWeb() {
-  ctx.clearRect(0, 0, width, height);
+  ctx.fillStyle = 'black';
+  ctx.fillRect(0, 0, width, height);
 
   for (let i = 0; i < nodes.length; i++) {
     const n1 = nodes[i];
