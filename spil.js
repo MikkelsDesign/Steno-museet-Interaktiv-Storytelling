@@ -156,7 +156,7 @@ setInterval(() => {
 player.style.left = x + 'px';
 player.style.bottom = '10px';
 loop();
-tick();s
+tick();
 
 }
 
