@@ -129,13 +129,13 @@ setInterval(() => {
       over = true;
 
       // show overlay + score
-      finalScore.textContent = `Your Score: ${score}`;
+      finalScore.textContent = `Din Score: ${score}`;
       overlay.classList.remove('hidden');
 
       // prompt & save
-      const name = prompt('Skriv dit navn til leaderboardet:', 'Anon');
+      const name = prompt('Skriv dit navn til leaderboardet:', 'Navn');
       if (name !== null) {
-        saveScoreToStorage(name.trim() || 'Anon', score);
+        saveScoreToStorage(name.trim() || 'Navn', score);
       }
 
       // button handler
