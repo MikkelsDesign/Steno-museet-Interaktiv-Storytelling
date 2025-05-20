@@ -78,25 +78,6 @@ function aabenOgLukMenu() {
         burgericon.style.display = "block"; // Vis burgerikon igen
     }
 }
-// SPROG OVERSÆTTELSE
-
-// Oversættelser (sprog)
-const translations = {
-    da: {
-        headline: "Hej med dig"
-        
-    },
-    en: {
-        headline: "Hello there"
-    }
-};
-// Sprog-skift
-const languageSelect = document.getElementById('language-select');
-languageSelect.addEventListener('change', function() {
-    const valgtSprog = this.value;
-    document.getElementById('headline').textContent = translations[valgtSprog].headline;
-});
-
 
 // mute/unmute---
 const audio = document.getElementById("background-audio");

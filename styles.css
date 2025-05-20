@@ -54,13 +54,6 @@
     margin-left: auto;
 }
 
-/* sprog dropdown */
-#menu div {
-    margin-top: 20px;
-    color: #fff;
-    font-size: 16px;
-}
-
 /* Indhold uden for menuen */
 main {
     padding: 20px;
@@ -112,7 +105,6 @@ main {
       color: white;
       animation: puls 1s infinite ease-in-out; /* den giver en puls bevægelse til knappen hvert sekund, og bliver ved uendeligt */
   }
-  
   
   /* puls effekt på knap */
   @keyframes puls {
