@@ -1,10 +1,31 @@
+@font-face {
+  font-family: 'AUPassata';
+  src: url('./font/AUPassata_Rg.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'AUPassata';
+  src: url('./font/AUPassata_Bold.ttf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'AUPassata';
+  src: url('./font/AUPassata_Light.ttf') format('truetype');
+  font-weight: 300;
+  font-style: normal;
+}
+
 body, html {
     margin: 0;
     padding: 0;
     overflow: hidden;
     background: #222;
     color: white;
-    font-family: sans-serif;
+    font-family: 'AUPassata', Arial, sans-serif;
    
   }
 #baggrund{
@@ -32,7 +53,7 @@ body, html {
   #player {
     position: absolute;
     width: 80px;
-    height: 80px;
+    height: 100px;
     bottom: 10px;
     left: 50%;
     transform: translateX(-50%);
@@ -46,6 +67,7 @@ body, html {
   
   button {
     font-size: 60px;
+    font-family: 'AUPassata';
     margin-right: 20px;
     background-color: #8d1d06;
     color: white;
@@ -91,11 +113,13 @@ body, html {
 #gameover h1 {
   margin: 0 0 0.5em;
   font-size: 2rem;
+  font-family: 'AUPassata';
   color: #D7811E;            /* star-palette “orange” */
 }
 
 /* Final score text */
 #gameover p {
+  font-family: 'AUPassata';
   margin: 0 0 1.5em;
   font-size: 1.25rem;
 }
@@ -112,6 +136,7 @@ body, html {
   border-radius: 4px;
   cursor: pointer;
   transition: transform 0.2s;
+  font-family: 'AUPassata';
 }
 
 /* Simple hover feedback */
