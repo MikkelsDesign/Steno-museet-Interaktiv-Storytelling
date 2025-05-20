@@ -59,13 +59,13 @@ main#leaderboard h1 {
   border-radius: 4px;
   font-size: 1.1rem;
   font-family: 'AUPassata';
+   color: #fff;
 }
 
 /* 1st place – purple */
 #leaderboard-list li:nth-child(1) {
   background: #AA95EC;
   color: #fff;
-  font-weight: bold;
 }
 
 /* 2nd place – blue */
