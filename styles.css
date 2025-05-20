@@ -20,7 +20,7 @@
     right: 0;
     width: 250px;
     height: 100%;
-    background-color: #333;
+    background-color: #d7811e;
     padding: 20px;
     box-shadow: -2px 0 5px rgba(0,0,0,0.5);
     z-index: 1000;
@@ -28,7 +28,7 @@
 
 /* Menu links */
 #menu a {
-    color: #fff;
+    color: #ffffff;
     text-decoration: none;
     margin: 15px 0;
     font-size: 18px;
@@ -63,11 +63,11 @@ main {
     font-size: 0.8rem;
     padding: 4px 8px;
     margin-top: 20px;
-    background-color: #eee;
-    border: 1px solid #ccc;
-    border-radius: 4px;
+    background-color: #8d1d06;
+    color: #ffffff;
     cursor: pointer;
     transition: background-color 0.2s ease;
+    border: none;
   }
   #mute-button:hover {
     background-color: #ddd;
