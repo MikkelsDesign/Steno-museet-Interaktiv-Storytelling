@@ -75,14 +75,14 @@ function loop() {
   if (over) return;
 
   // Opdatere players position alt efter om pil trykkes
-  if (left) x = Math.max(0, x - 5);
-  if (right) x = Math.min(window.innerWidth - 40, x + 5);
+  if (left) x = Math.max(0, x - 8); //hastighed til player
+  if (right) x = Math.min(window.innerWidth - 40, x + 8); //hastighed til player
   player.style.left = x + 'px';
 
   // -------------------- Ting faldene fra himlen (spawning) --------------------
 
   document.querySelectorAll('.block').forEach(block => {
-    block.style.top = (parseFloat(block.style.top) + 4) + 'px';
+    block.style.top = (parseFloat(block.style.top) + 6) + 'px'; //hastighed til png
     if (collides(block, player)) {
       score += block.classList.contains('good') ? 1 : -1;
       block.remove();
