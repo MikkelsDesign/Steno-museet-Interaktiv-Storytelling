@@ -44,6 +44,7 @@
     left: 20px;
     font-size: 30px;
   }
+
 /* Overlay backdrop */
 #gameover {
   position: fixed;
@@ -95,7 +96,7 @@
   margin: 0 auto;            /* horizontal centering */
   padding: 0.75rem 1.5rem;
   font-size: 1rem;
-  background: #C51F00;        /* star-palette “red” */
+  background: #8d1d06;        /* star-palette “red” */
   color: #fff;
   border: none;
   border-radius: 4px;
@@ -104,10 +105,22 @@
   font-family: 'AUPassata';
 }
 
-/* Simple hover feedback */
-#gameover button:hover {
-  transform: scale(1.05);
+#result-image {
+  max-width: 100%;
+  height: auto;
+  margin: 0 auto 1rem;
+  display: block;
+  border-radius: 4px;
 }
+
+/* Result description text */
+#result-description {
+  font-family: 'AUPassata';
+  margin: 0 0 1.5em;
+  font-size: 1rem;
+  line-height: 1.4;
+}
+
 
 
   
