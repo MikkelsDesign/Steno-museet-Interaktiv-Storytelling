@@ -107,6 +107,7 @@ body, html {
   max-width: 320px;          /* optional, for nicer layout */
   width: 90%;                /* responsive */
   box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  font-family: 'AUPassata';
 }
 
 /* Heading in a warm accent */
