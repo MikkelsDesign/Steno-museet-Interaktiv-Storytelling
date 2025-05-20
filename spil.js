@@ -122,32 +122,49 @@ setInterval(() => {
 
 // -------------------- Timer --------------------
 
+function tick() {
+  if (--time < 0) {
+    over = true;
 
-// nedtællings timer
-  function tick() {
-    if (--time < 0) {
-      over = true;
-
-      // show overlay + score
-      finalScore.textContent = `Din Score: ${score}`;
-      overlay.classList.remove('hidden');
-
-      // prompt & save
-      const name = prompt('Skriv dit navn til leaderboardet:', 'Navn');
-      if (name !== null) {
-        saveScoreToStorage(name.trim() || 'Navn', score);
-      }
-
-      // button handler
-      toLB.addEventListener('click', () => {
-        window.location.href = 'leaderboard.html';
-      });
-
+    // Determine which result to show based on score
+    let resultImage, resultDescription;
+    
+    if (score <= 10) {
+      resultImage = 'img/Ending1.png'; // Replace with your actual image paths
+      resultDescription = 'Dit hjerte er i meget dårlig stand! Du bør virkelig tænke over dine valg.';
+    } else if (score <= 20) {
+      resultImage = 'img/Ending2.png';
+      resultDescription = 'Dit hjerte kunne have det bedre. Prøv at tage flere sunde valg.';
+    } else if (score <= 30) {
+      resultImage = 'img/Ending3.png';
+      resultDescription = 'Dit hjerte er i ret god stand! Du er på rette vej.';
     } else {
-      updateScoreboard();
-      setTimeout(tick, 1000);
+      resultImage = 'img/Ending4.png';
+      resultDescription = 'Dit hjerte er i topform! Fantastisk arbejde med at træffe sunde valg.';
     }
+
+    // Update overlay with score, image and description
+    finalScore.textContent = `Din Score: ${score}`;
+    document.getElementById('result-image').src = resultImage;
+    document.getElementById('result-description').textContent = resultDescription;
+    overlay.classList.remove('hidden');
+
+    // prompt & save
+    const name = prompt('Skriv dit navn til leaderboardet:', 'Navn');
+    if (name !== null) {
+      saveScoreToStorage(name.trim() || 'Navn', score);
+    }
+
+    // button handler
+    toLB.addEventListener('click', () => {
+      window.location.href = 'leaderboard.html';
+    });
+
+  } else {
+    updateScoreboard();
+    setTimeout(tick, 1000);
   }
+}
 
 
 
