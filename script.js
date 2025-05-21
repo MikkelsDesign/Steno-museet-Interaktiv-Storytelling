@@ -25,7 +25,8 @@ const audio = document.getElementById("background-audio");
 const muteButton = document.getElementById("mute-button");
 
 audio.volume = 1.0; // Maks lyd
-audio.muted = true;
+audio.muted = false;
+
 
 muteButton.addEventListener("click", () => {
     audio.muted = !audio.muted;
