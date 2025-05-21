@@ -36,6 +36,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  width: 100%;
 }
 
 /* Luk-knap */
@@ -67,6 +68,8 @@ main {
     cursor: pointer;
     border: none;
     font-family: 'AUPassata';
+    width: 100%;
+    box-sizing: border-box;
   }
 
   /*startforfra knap*/
@@ -79,6 +82,8 @@ main {
     cursor: pointer;
     transition: background-color 0.2s ease;
     border: none;
+    width: 100%;
+    box-sizing: border-box;
   }
 
   /******** S T A R T S K Æ R M *********/

@@ -29,7 +29,7 @@ audio.muted = true;
 
 muteButton.addEventListener("click", () => {
     audio.muted = !audio.muted;
-    muteButton.textContent = audio.muted ? "🔇 Slå lyd til" : "🔈 Slå lyd fra";
+    muteButton.textContent = audio.muted ? "Slå lyd til" : "Slå lyd fra";
     if (!audio.muted) {
         audio.play(); // Nogle browsere kræver et play-kald efter unmute
     }
