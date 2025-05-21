@@ -97,6 +97,10 @@ function loop() {
 }
 
 // (spawn) skaber png der falder ned fra himlen)
+
+const goodImages = ['img/salat.png', 'img/oeble.png', 'img/vand.png']; 
+const enemyImages = ['img/oel.png', 'img/pomfritter.png', 'img/cigerat.png']; 
+
 setInterval(() => {
   if (over) return;
 
@@ -105,11 +109,13 @@ setInterval(() => {
   block.className = 'block ' + (isGood ? 'good' : 'enemy');
 
   // Vælg tilfældig png til blokken der falder
-  const goodImages = ['img/salat.png', 'img/oeble.png', 'img/vand.png']; 
-  const enemyImages = ['img/oel.png', 'img/pomfritter.png', 'img/cigerat.png']; 
-  const image = isGood
-    ? goodImages[Math.floor(Math.random() * goodImages.length)]
-    : enemyImages[Math.floor(Math.random() * enemyImages.length)];
+  let image;
+
+  if (isGood) {
+    image = goodImages[Math.floor(Math.random() * goodImages.length)];
+  } else {
+    image = enemyImages[Math.floor(Math.random() * enemyImages.length)];
+  }
 
   block.style.backgroundImage = `url('${image}')`;
   block.style.backgroundSize = 'contain';
