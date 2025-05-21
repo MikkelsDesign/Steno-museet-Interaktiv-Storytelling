@@ -28,15 +28,14 @@
 
 /* Menu links */
 #menu a {
-    color: #ffffff;
-    text-decoration: none;
-    margin: 15px 0;
-    font-size: 18px;
-    transition: color 0.3s ease;
-}
-
-#menu a:hover {
-    color: #ffcc00;
+  color: #ffffff;
+  text-decoration: none;
+  margin: 15px 0;
+  font-size: 18px;
+  font-family: 'AUPassata';
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 /* Luk-knap */
@@ -60,14 +59,14 @@ main {
 
 /* mutebutton style */
 #mute-button {
-    font-size: 0.8rem;
+    font-size: 18px;
     padding: 4px 8px;
     margin-top: 20px;
     background-color: #8d1d06;
     color: #ffffff;
     cursor: pointer;
-    transition: background-color 0.2s ease;
     border: none;
+    font-family: 'AUPassata';
   }
 
   /*startforfra knap*/
