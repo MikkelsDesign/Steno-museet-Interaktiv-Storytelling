@@ -1,3 +1,4 @@
+"use strict";
 //BURGERMENU
 let menu = document.querySelector("#menu");
 const burgericon = document.querySelector("#burgericon");

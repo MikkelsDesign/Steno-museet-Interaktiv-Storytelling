@@ -1,3 +1,4 @@
+"use strict";
 
 // ———————— 1) Helper: persist scores —————————
 function saveScoreToStorage(name, score) {

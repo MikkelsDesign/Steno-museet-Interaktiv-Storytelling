@@ -1,3 +1,4 @@
+"use strict";
 // START KNAP FUNCTIONALITY
 const startBtn = document.getElementById('start-knap');
 const body = document.body;

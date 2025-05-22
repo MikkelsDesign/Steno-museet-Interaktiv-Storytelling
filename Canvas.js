@@ -1,3 +1,5 @@
+"use strict";
+
 const canvas = document.getElementById('webCanvas');
 const ctx = canvas.getContext('2d');
 let width = canvas.width = window.innerWidth;
