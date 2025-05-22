@@ -1,29 +1,28 @@
-
 /* Burgerikon */
 #burgericon {
-    width: 50px;
-    height: 40px;
-    margin: 20px;
-    cursor: pointer;
-    position: fixed;
-    top: 20px;
-    right: 20px; /* <-- FLYT til højre side */
-    z-index: 1100; /* Sørg for den ligger OVER menuen */
+  width: 50px;
+  height: 40px;
+  margin: 20px;
+  cursor: pointer;
+  position: fixed;
+  top: 20px;
+  right: 20px; /* <-- FLYT til højre side */
+  z-index: 1100; /* Sørg for den ligger OVER menuen */
 }
 
 /* Menu-stil */
 #menu {
-    display: none; /* Starter skjult */
-    flex-direction: column;
-    position: fixed;
-    top: 0;
-    right: 0;
-    width: 250px;
-    height: 100%;
-    background-color: #d7811e;
-    padding: 20px;
-    box-shadow: -2px 0 5px rgba(0,0,0,0.5);
-    z-index: 1000;
+  display: none; /* Starter skjult */
+  flex-direction: column;
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 250px;
+  height: 100%;
+  background-color: #d7811e;
+  padding: 20px;
+  box-shadow: -2px 0 5px rgba(0, 0, 0, 0.5);
+  z-index: 1000;
 }
 
 /* Menu links */
@@ -32,7 +31,7 @@
   text-decoration: none;
   margin: 15px 0;
   font-size: 18px;
-  font-family: 'AUPassata';
+  font-family: "AUPassata";
   display: flex;
   justify-content: center;
   align-items: center;
@@ -41,131 +40,136 @@
 
 /* Luk-knap */
 #close {
-    font-size: 24px;
-    text-align: right;
-    display: block;
-    margin-left: auto;
+  font-size: 24px;
+  text-align: right;
+  display: block;
+  margin-left: auto;
 }
 
 /* Indhold uden for menuen */
 main {
-    padding: 20px;
-    text-align: center;
+  padding: 20px;
+  text-align: center;
 }
 #welcome-text {
-    font-size: 28px;
-    color: #333;
-    margin-top: 40px;
+  font-size: 28px;
+  color: #333;
+  margin-top: 40px;
 }
 
 /* mutebutton style */
 #mute-button {
-    font-size: 18px;
-    padding: 4px 8px;
-    margin-top: 20px;
-    background-color: #8d1d06;
-    color: #ffffff;
-    cursor: pointer;
-    border: none;
-    font-family: 'AUPassata';
-    width: 100%;
-    box-sizing: border-box;
-  }
+  font-size: 18px;
+  padding: 4px 8px;
+  margin-top: 20px;
+  background-color: #8d1d06;
+  color: #ffffff;
+  cursor: pointer;
+  border: none;
+  font-family: "AUPassata";
+  width: 100%;
+  box-sizing: border-box;
+}
 
-  /*startforfra knap*/
-  #start-link {
-    font-size: 0.8rem;
-    padding: 4px 8px;
-    margin-top: 20px;
-    background-color: #8d1d06;
-    color: #ffffff;
-    cursor: pointer;
-    transition: background-color 0.2s ease;
-    border: none;
-    width: 100%;
-    box-sizing: border-box;
-  }
+/*startforfra knap*/
+#start-link {
+  font-size: 0.8rem;
+  padding: 4px 8px;
+  margin-top: 20px;
+  background-color: #8d1d06;
+  color: #ffffff;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  border: none;
+  width: 100%;
+  box-sizing: border-box;
+}
 
-  /******** S T A R T S K Æ R M *********/
-  /* Billedet fylder hele skærmen og ligger bagved vores knap */
-  #ur {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      opacity: 30%;
-      z-index: -1;
+/******** S T A R T S K Æ R M *********/
+/* Billedet fylder hele skærmen og ligger bagved vores knap */
+#ur {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 30%;
+  z-index: -1;
+}
+
+/* button stilen - størrelae, samt farve og animation */
+.start-btn {
+  position: absolute;
+  top: 50%; /* centrere knappen 50% fra toppen af skærmen*/
+  left: 50%; /* centrere knappen 50% fra venstre side af skærmen*/
+  padding: 50px 100px; /* 50px høj og 100px bred*/
+  font-size: 4rem;
+  font-family: "AUPassata";
+  background-color: #8d1d06;
+  border: none;
+  color: white;
+  animation: puls 1s infinite ease-in-out; /* den giver en puls bevægelse til knappen hvert sekund, og bliver ved uendeligt */
+}
+
+/* puls effekt på knap */
+@keyframes puls {
+  0% {
+    transform: translate(-50%, -50%) scale(1);
+  } /* knappen originale størelse */
+  50% {
+    transform: translate(-50%, -50%) scale(1.1);
   }
-  
-  /* button stilen - størrelae, samt farve og animation */
-  .start-btn {
-      position: absolute;
-      top: 50%; /* centrere knappen 50% fra toppen af skærmen*/
-      left: 50%; /* centrere knappen 50% fra venstre side af skærmen*/
-      padding: 50px 100px; /* 50px høj og 100px bred*/      
-      font-size: 4rem;  
-      font-family: 'AUPassata';
-      background-color: #8d1d06;
-      border: none;
-      color: white;
-      animation: puls 1s infinite ease-in-out; /* den giver en puls bevægelse til knappen hvert sekund, og bliver ved uendeligt */
-  }
-  
-  /* puls effekt på knap */
-  @keyframes puls {
-      0% { transform: translate(-50%, -50%) scale(1); } /* knappen originale størelse */
-      50% { transform: translate(-50%, -50%) scale(1.1); }
-      100% { transform: translate(-50%, -50%) scale(1); } /* knappen største størelse */
-  }
+  100% {
+    transform: translate(-50%, -50%) scale(1);
+  } /* knappen største størelse */
+}
 
 /* Video styles */
 #video-container {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 500;
-    background-color: black;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 500;
+  background-color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 #intro-video {
-    max-width: 100%;
-    max-height: 100%;
+  max-width: 100%;
+  max-height: 100%;
 }
 
- /* intro til spil styles */
+/* intro til spil styles */
 
-  .centerbox {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 1;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  
-  #infografik {
-    max-height: 65vh;
-    object-fit: contain;
-  }
-  
-  .startspilknap {
-    margin-top: 20px;
-    width: 200px;
-    padding: 10px;
-    font-size: 1.2rem;
-    cursor: pointer;  
-    font-size: 2rem;  
-    background-color: #8d1d06;
-    border: none;
-    color: white;
-  }
+.centerbox {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 
+#infografik {
+  max-height: 65vh;
+  object-fit: contain;
+}
+
+.startspilknap {
+  margin-top: 20px;
+  width: 200px;
+  padding: 10px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  font-size: 2rem;
+  background-color: #8d1d06;
+  border: none;
+  color: white;
+}

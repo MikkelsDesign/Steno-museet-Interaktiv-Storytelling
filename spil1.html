@@ -1,55 +1,53 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="Mainstyle.css">
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="spil.css">
+<html lang="da">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="Mainstyle.css" />
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="spil.css" />
     <script src="Canvas.js" defer></script>
     <script src="spil.js" defer></script>
     <script src="script.js" defer></script>
     <title>Steno Museet Interaktiv Storytelling</title>
-</head>
-<body>
-  <canvas id="webCanvas"></canvas>
+  </head>
+  <body>
+    <canvas id="webCanvas"></canvas>
 
     <div id="game">
-        <img id="player" src="img/ægte-hjerte-ikon.png" alt="Player">
+      <img id="player" src="img/ægte-hjerte-ikon.png" alt="Player" />
+    </div>
+
+    <div id="gameover" class="hidden">
+      <div class="go-content">
+        <h1>Game Over</h1>
+        <img id="result-image" src="/img/Ending1.png" alt="Result Image" />
+        <p id="final-score"></p>
+        <p id="result-description"></p>
+        <button id="to-leaderboard">Til Leaderboardet</button>
       </div>
+    </div>
 
-      <!-- Game Over Overlay -->
-<div id="gameover" class="hidden">
-  <div class="go-content">
-    <h1>Game Over</h1>
-    <img id="result-image" src="/img/Ending1.png" alt="Result Image">
-    <p id="final-score"></p>
-    <p id="result-description"></p>
-    <button id="to-leaderboard">Til Leaderboardet</button>
-  </div>
-</div>
+    <div class="controls">
+      <button id="left">&#8592;</button>
+      <button id="right">&#8594;</button>
+    </div>
 
-        <div class="controls">
-          <button id="left">&#8592;</button>
-          <button id="right">&#8594;</button>
-        </div>
-    
-        <div id="scoreboard">Score: 0 | Time: 60</div>
-     
-        <img id="burgericon" src="img/burgericon.png" alt="Burger Icon">
+    <div id="scoreboard">Score: 0 | Time: 60</div>
 
-        <nav id="menu">
-            <a id="close" href="#" style="text-align:right">X</a>
-            <a id="start-link">Start forfra</a>
-    
-            <!-- Mute-knap -->
-            <button id="mute-button">Slå lyd til</button>
-        </nav>
-    
-        <!-- Baggrundslyd -->
-        <audio id="background-audio" autoplay loop muted>
-            <source src="audio/heartbeat.mp3" type="audio/mpeg">
-        </audio>
-      
-</body>
+    <img id="burgericon" src="img/burgericon.png" alt="Burger Icon" />
+
+    <nav id="menu">
+      <a id="close" href="#" style="text-align: right">X</a>
+      <a id="start-link">Start forfra</a>
+
+      <!-- Mute-knap -->
+      <button id="mute-button">Slå lyd til</button>
+    </nav>
+
+    <!-- Baggrundslyd -->
+    <audio id="background-audio" autoplay loop muted>
+      <source src="audio/heartbeat.mp3" type="audio/mpeg" />
+    </audio>
+  </body>
 </html>

@@ -1,20 +1,20 @@
 @font-face {
-  font-family: 'AUPassata';
-  src: url('./font/AUPassata_Rg.ttf') format('truetype');
+  font-family: "AUPassata";
+  src: url("./font/AUPassata_Rg.ttf") format("truetype");
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
-  font-family: 'AUPassata';
-  src: url('./font/AUPassata_Bold.ttf') format('truetype');
+  font-family: "AUPassata";
+  src: url("./font/AUPassata_Bold.ttf") format("truetype");
   font-weight: bold;
   font-style: normal;
 }
 
 @font-face {
-  font-family: 'AUPassata';
-  src: url('./font/AUPassata_Light.ttf') format('truetype');
+  font-family: "AUPassata";
+  src: url("./font/AUPassata_Light.ttf") format("truetype");
   font-weight: 300;
   font-style: normal;
 }
@@ -25,49 +25,49 @@ main#leaderboard {
   padding: 1rem;
 }
 
-/* Title uses the museum’s primary orange */
+
 main#leaderboard h1 {
   text-align: center;
   font-size: 2.5rem;
   margin-bottom: 1.5rem;
   color: white;
-  font-family: 'AUPassata';
+  font-family: "AUPassata";
 }
 
-/* The list */
+
 #leaderboard-list {
   list-style: none;
   margin: 0;
   padding: 0;
 }
 
-/* Default row style (ranks 4+) */
+
 #leaderboard-list li {
   display: flex;
   justify-content: space-between;
   padding: 0.75rem 1rem;
   margin-bottom: 0.5rem;
-  background: #FFCA8C; /* passive orange */
+  background: #ffca8c;
   border-radius: 4px;
   font-size: 1.1rem;
-  font-family: 'AUPassata';
-   color: #fff;
+  font-family: "AUPassata";
+  color: #fff;
 }
 
-/* 1st place – purple */
+
 #leaderboard-list li:nth-child(1) {
-  background: #AA95EC;
+  background: #aa95ec;
   color: #fff;
 }
 
-/* 2nd place – blue */
+
 #leaderboard-list li:nth-child(2) {
-  background: #7CBEFF;
+  background: #7cbeff;
   color: #fff;
 }
 
-/* 3rd place – green */
+
 #leaderboard-list li:nth-child(3) {
-  background: #A4D5C9;
+  background: #a4d5c9;
   color: #fff;
 }
