@@ -1,20 +1,19 @@
 "use strict";
 
-const canvas = document.getElementById('webCanvas');
-const ctx = canvas.getContext('2d');
-let width = canvas.width = window.innerWidth;
-let height = canvas.height = window.innerHeight;
+const canvas = document.getElementById("webCanvas");
+const ctx = canvas.getContext("2d");
+let width = (canvas.width = window.innerWidth);
+let height = (canvas.height = window.innerHeight);
 
 const nodes = [];
 const nodeCount = 100;
 const maxDist = 150;
 
-
 const colors = {
-  darkOrange: '#BB6620',
-  mediumOrange: '#D7811E',
-  lightOrange: '#FEA743',
-  paleOrange: '#FFCA8C'
+  darkOrange: "#BB6620",
+  mediumOrange: "#D7811E",
+  lightOrange: "#FEA743",
+  paleOrange: "#FFCA8C",
 };
 
 for (let i = 0; i < nodeCount; i++) {
@@ -22,12 +21,12 @@ for (let i = 0; i < nodeCount; i++) {
     x: Math.random() * width,
     y: Math.random() * height,
     vx: (Math.random() - 0.5) * 0.5,
-    vy: (Math.random() - 0.5) * 0.5
+    vy: (Math.random() - 0.5) * 0.5,
   });
 }
 
 function drawWeb() {
-  ctx.fillStyle = 'black';
+  ctx.fillStyle = "black";
   ctx.fillRect(0, 0, width, height);
 
   for (let i = 0; i < nodes.length; i++) {
@@ -54,8 +53,10 @@ function drawWeb() {
         } else {
           color = colors.lightOrange;
         }
-        
-        ctx.strokeStyle = `${color}${Math.floor(opacity * 255).toString(16).padStart(2, '0')}`;
+
+        ctx.strokeStyle = `${color}${Math.floor(opacity * 255)
+          .toString(16)
+          .padStart(2, "0")}`;
         ctx.beginPath();
         ctx.moveTo(n1.x, n1.y);
         ctx.lineTo(n2.x, n2.y);
@@ -63,7 +64,6 @@ function drawWeb() {
       }
     }
 
-    
     ctx.fillStyle = colors.darkOrange;
     ctx.beginPath();
     ctx.arc(n1.x, n1.y, 2, 0, Math.PI * 2);
@@ -71,7 +71,7 @@ function drawWeb() {
   }
 }
 
-window.addEventListener('resize', () => {
+window.addEventListener("resize", () => {
   width = canvas.width = window.innerWidth;
   height = canvas.height = window.innerHeight;
 });

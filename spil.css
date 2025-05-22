@@ -1,108 +1,104 @@
-  
-  #game {
-    position: relative;
-    width: 100vw;
-    height: 100vh;
-  }
-  
-  .player, .block {
-    position: absolute;
-    width: 70px;
-    height: 70px;
-    background-image: url('heart.png'); /* Replace with the actual heart PNG file path */
-    background-size: contain;
-    background-repeat: no-repeat;
-  }
-  
-  #player {
-    position: absolute;
-    width: 80px;
-    height: 100px;
-    bottom: 10px;
-    left: 50%;
-    transform: translateX(-50%);
-  }
-  
-  .controls {
-    position: absolute;
-    bottom: 10px;
-    right: 10px;
-  }
-  
-  button {
-    font-size: 60px;
-    font-family: 'AUPassata';
-    margin-right: 20px;
-    background-color: #8d1d06;
-    color: white;
-    border: none;
-  }
-  
-  #scoreboard {
-    position: absolute;
-    top: 20px;
-    left: 20px;
-    font-size: 30px;
-  }
+#game {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+}
 
+.player,
+.block {
+  position: absolute;
+  width: 70px;
+  height: 70px;
+  background-image: url("heart.png"); /* Replace with the actual heart PNG file path */
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+#player {
+  position: absolute;
+  width: 80px;
+  height: 100px;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.controls {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+}
+
+button {
+  font-size: 60px;
+  font-family: "AUPassata";
+  margin-right: 20px;
+  background-color: #8d1d06;
+  color: white;
+  border: none;
+}
+
+#scoreboard {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  font-size: 30px;
+}
 
 #gameover {
   position: fixed;
-  top: 0; left: 0;
-  width: 100vw; height: 100vh;
-  background: rgba(0,0,0,0.8);
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.8);
   display: flex;
   align-items: center;
   justify-content: center;
   z-index: 100;
 }
 
-
 #gameover.hidden {
   display: none;
 }
 
-
 #gameover .go-content {
   background: #fff;
-  color: #333;               
+  color: #333;
   padding: 2rem;
   border-radius: 8px;
   text-align: center;
-  max-width: 320px;          
-  width: 90%;                
-  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
-  font-family: 'AUPassata';
+  max-width: 320px;
+  width: 90%;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  font-family: "AUPassata";
 }
-
 
 #gameover h1 {
   margin: 0 0 0.5em;
   font-size: 2rem;
-  font-family: 'AUPassata';
-  color: #D7811E;            
+  font-family: "AUPassata";
+  color: #d7811e;
 }
 
-
 #gameover p {
-  font-family: 'AUPassata';
+  font-family: "AUPassata";
   margin: 0 0 1.5em;
   font-size: 1.25rem;
 }
 
-
 #gameover button {
   display: block;
-  margin: 0 auto;            
+  margin: 0 auto;
   padding: 0.75rem 1.5rem;
   font-size: 1rem;
-  background: #8d1d06;       
+  background: #8d1d06;
   color: #fff;
   border: none;
   border-radius: 4px;
   cursor: pointer;
   transition: transform 0.2s;
-  font-family: 'AUPassata';
+  font-family: "AUPassata";
 }
 
 #result-image {
@@ -113,14 +109,9 @@
   border-radius: 4px;
 }
 
-
 #result-description {
-  font-family: 'AUPassata';
+  font-family: "AUPassata";
   margin: 0 0 1.5em;
   font-size: 1rem;
   line-height: 1.4;
 }
-
-
-
-  
