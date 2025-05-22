@@ -9,7 +9,7 @@ const nodes = [];
 const nodeCount = 100;
 const maxDist = 150;
 
-// Color palette
+
 const colors = {
   darkOrange: '#BB6620',
   mediumOrange: '#D7811E',
@@ -46,7 +46,6 @@ function drawWeb() {
 
       if (dist < maxDist) {
         const opacity = 1 - dist / maxDist;
-        // Use different colors based on distance
         let color;
         if (dist < maxDist * 0.33) {
           color = colors.darkOrange;
@@ -64,7 +63,7 @@ function drawWeb() {
       }
     }
 
-    // Use paleOrange for nodes
+    
     ctx.fillStyle = colors.darkOrange;
     ctx.beginPath();
     ctx.arc(n1.x, n1.y, 2, 0, Math.PI * 2);
