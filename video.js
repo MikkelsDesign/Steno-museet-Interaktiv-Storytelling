@@ -1,10 +1,10 @@
 "use strict";
-// START KNAP FUNCTIONALITY
+
 const startBtn = document.getElementById('start-knap');
 const body = document.body;
 
 startBtn.addEventListener('click', () => {
-    // Create a container for the video
+
     const videoContainer = document.createElement('div');
     videoContainer.id = 'video-container';
     videoContainer.style.position = 'fixed';
@@ -17,7 +17,7 @@ startBtn.addEventListener('click', () => {
     videoContainer.style.opacity = '0';
     videoContainer.style.transition = 'opacity 1s ease';
     
-    // Create video element
+ 
     const video = document.createElement('video');
     video.id = 'intro-video';
     video.style.width = '100%';
@@ -26,7 +26,7 @@ startBtn.addEventListener('click', () => {
     video.controls = false;
     video.autoplay = false;
     
-    // Add source to video
+  
     const source = document.createElement('source');
     source.src = '/Video/Steno Video 3.mp4'; 
     source.type = 'video/mp4';
@@ -35,14 +35,14 @@ startBtn.addEventListener('click', () => {
     videoContainer.appendChild(video);
     body.appendChild(videoContainer);
     
-    // Fade out all elements except menu
+  
     const elementsToFade = document.querySelectorAll('body > *:not(#menu):not(#video-container):not(#burgericon)');
     elementsToFade.forEach(element => {
         element.style.transition = 'opacity 1s ease';
         element.style.opacity = '0';
     });
     
-  // After fade out, play video
+
     setTimeout(() => {
         elementsToFade.forEach(element => {
             element.style.display = 'none';
@@ -50,9 +50,9 @@ startBtn.addEventListener('click', () => {
         videoContainer.style.opacity = '1';
         video.play();
         
-        // When video ends, redirect to game page or show the next screen
+      
         video.addEventListener('ended', () => {
-            window.location.href = 'introTilSpil.html'; // Redirect to your game page
+            window.location.href = 'introTilSpil.html'; 
         });
-    }, 1000); // Added timeout duration of 1000ms (1 second)
+    }, 1000); 
 });

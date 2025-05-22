@@ -1,6 +1,6 @@
 "use strict";
 
-// ———————— 1) Helper: persist scores —————————
+// ———————— Score der bliver gemt og gjort til en JSON string —————————
 function saveScoreToStorage(name, score) {
   const key = 'stenoLeaderboard';
   const entries = JSON.parse(localStorage.getItem(key) || '[]');
@@ -133,11 +133,11 @@ function tick() {
   if (--time < 0) {
     over = true;
 
-    // Determine which result to show based on score
+    
     let resultImage, resultDescription;
     
     if (score <= 10) {
-      resultImage = 'img/Ending1.png'; // Replace with your actual image paths
+      resultImage = 'img/Ending1.png'; 
       resultDescription = 'Dit hjerte er i meget dårlig stand! Du bør virkelig tænke over dine valg.';
     } else if (score <= 20) {
       resultImage = 'img/Ending2.png';
@@ -150,19 +150,19 @@ function tick() {
       resultDescription = 'Dit hjerte er i topform! Fantastisk arbejde med at træffe sunde valg.';
     }
 
-    // Update overlay with score, image and description
+    
     finalScore.textContent = `Din Score: ${score}`;
     document.getElementById('result-image').src = resultImage;
     document.getElementById('result-description').textContent = resultDescription;
     overlay.classList.remove('hidden');
 
-    // prompt & save
+    
     const name = prompt('Skriv dit navn til leaderboardet:', 'Navn');
     if (name !== null) {
       saveScoreToStorage(name.trim() || 'Navn', score);
     }
 
-    // button handler
+    
     toLB.addEventListener('click', () => {
       window.location.href = 'leaderboard.html';
     });
@@ -203,7 +203,7 @@ function initLeaderboard() {
   });
 }
 
-// Collision check
+// Kollisioner mellem player og blokke
 function collides(a, b) {
   const r1 = a.getBoundingClientRect();
   const r2 = b.getBoundingClientRect();
@@ -211,14 +211,14 @@ function collides(a, b) {
 }
 
 
-// ———————— 5) Auto-init on DOMContentLoaded ——————
+
 document.addEventListener('DOMContentLoaded', () => {
-  // If your page has an element with id="game", start the game
+ 
   if (document.getElementById('game')) {
     initGame();
   }
 
-  // If your page has an element with id="leaderboard-list", render it
+ 
   if (document.getElementById('leaderboard-list')) {
     initLeaderboard();
   }
