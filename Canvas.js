@@ -5,10 +5,12 @@ const ctx = canvas.getContext("2d");
 let width = (canvas.width = window.innerWidth);
 let height = (canvas.height = window.innerHeight);
 
+// Mængden af noder og maksimal afstand
 const nodes = [];
 const nodeCount = 100;
 const maxDist = 150;
 
+// Farve palet
 const colors = {
   darkOrange: "#BB6620",
   mediumOrange: "#D7811E",
@@ -16,6 +18,7 @@ const colors = {
   paleOrange: "#FFCA8C",
 };
 
+// Opret noder med tilfældige positioner og hastigheder
 for (let i = 0; i < nodeCount; i++) {
   nodes.push({
     x: Math.random() * width,
@@ -24,6 +27,7 @@ for (let i = 0; i < nodeCount; i++) {
     vy: (Math.random() - 0.5) * 0.5,
   });
 }
+
 
 function drawWeb() {
   ctx.fillStyle = "black";
@@ -43,6 +47,8 @@ function drawWeb() {
       const dy = n1.y - n2.y;
       const dist = Math.sqrt(dx * dx + dy * dy);
 
+      // Beregn afstand og tegn linje hvis den er under maxDist
+      // og tilføj farve baseret på afstand
       if (dist < maxDist) {
         const opacity = 1 - dist / maxDist;
         let color;
@@ -71,6 +77,7 @@ function drawWeb() {
   }
 }
 
+// Opdater canvas størrelse ved vinduesændring
 window.addEventListener("resize", () => {
   width = canvas.width = window.innerWidth;
   height = canvas.height = window.innerHeight;

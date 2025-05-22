@@ -146,12 +146,14 @@ function initGame() {
 
   // -------------------- Timer --------------------
 
+  // Opdaterer tid og score hvert sekund
   function tick() {
     if (--time < 0) {
       over = true;
 
       let resultImage, resultDescription;
 
+      // Viser resultatbillede og beskrivelse baseret på score
       if (score <= 10) {
         resultImage = "img/Ending1.png";
         resultDescription =
@@ -170,12 +172,14 @@ function initGame() {
           "Dit hjerte er i topform! Fantastisk arbejde med at træffe sunde valg.";
       }
 
+      // Opdaterer overlay med score og billede
       finalScore.textContent = `Din Score: ${score}`;
       document.getElementById("result-image").src = resultImage;
       document.getElementById("result-description").textContent =
         resultDescription;
       overlay.classList.remove("hidden");
 
+      // Gemmer score og navn i localStorage
       const name = prompt("Skriv dit navn til leaderboardet:", "Navn");
       if (name !== null) {
         saveScoreToStorage(name.trim() || "Navn", score);
@@ -199,6 +203,8 @@ function initGame() {
 
 // ------------------------------------LEADERBOARD----------------------------------
 
+// Opretter leaderboardet
+// Henter data fra localStorage og sorterer dem efter score
 function initLeaderboard() {
   const listEl = document.getElementById("leaderboard-list");
   if (!listEl) return;
@@ -228,6 +234,8 @@ function collides(a, b) {
   );
 }
 
+// -------------------- DOMContentLoaded --------------------
+// Når DOM'en er indlæst, initialiserer spillet og leaderboardet
 document.addEventListener("DOMContentLoaded", () => {
   if (document.getElementById("game")) {
     initGame();
