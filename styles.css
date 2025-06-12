@@ -1,89 +1,3 @@
-/* Burgerikon */
-#burgericon {
-  width: 50px;
-  height: 40px;
-  margin: 20px;
-  cursor: pointer;
-  position: fixed;
-  top: 20px;
-  right: 20px; /* <-- FLYT til højre side */
-  z-index: 1100; /* Sørg for den ligger OVER menuen */
-}
-
-/* Menu-stil */
-#menu {
-  display: none; /* Starter skjult */
-  flex-direction: column;
-  position: fixed;
-  top: 0;
-  right: 0;
-  width: 250px;
-  height: 100%;
-  background-color: #d7811e;
-  padding: 20px;
-  box-shadow: -2px 0 5px rgba(0, 0, 0, 0.5);
-  z-index: 1000;
-}
-
-/* Menu links */
-#menu a {
-  color: #ffffff;
-  text-decoration: none;
-  margin: 15px 0;
-  font-size: 18px;
-  font-family: "AUPassata";
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-}
-
-/* Luk-knap */
-#close {
-  font-size: 24px;
-  text-align: right;
-  display: block;
-  margin-left: auto;
-}
-
-/* Indhold uden for menuen */
-main {
-  padding: 20px;
-  text-align: center;
-}
-#welcome-text {
-  font-size: 28px;
-  color: #333;
-  margin-top: 40px;
-}
-
-/* mutebutton style */
-#mute-button {
-  font-size: 18px;
-  padding: 4px 8px;
-  margin-top: 20px;
-  background-color: #8d1d06;
-  color: #ffffff;
-  cursor: pointer;
-  border: none;
-  font-family: "AUPassata";
-  width: 100%;
-  box-sizing: border-box;
-}
-
-/*startforfra knap*/
-#start-link {
-  font-size: 0.8rem;
-  padding: 4px 8px;
-  margin-top: 20px;
-  background-color: #8d1d06;
-  color: #ffffff;
-  cursor: pointer;
-  transition: background-color 0.2s ease;
-  border: none;
-  width: 100%;
-  box-sizing: border-box;
-}
 
 /******** S T A R T S K Æ R M *********/
 /* Billedet fylder hele skærmen og ligger bagved vores knap */
@@ -145,7 +59,6 @@ main {
 }
 
 /* intro til spil styles */
-
 .centerbox {
   position: fixed;
   top: 50%;
@@ -172,4 +85,29 @@ main {
   background-color: #8d1d06;
   border: none;
   color: white;
+}
+/* ikon - style */
+.top-icons {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  display: flex;
+  gap: 15px;
+  align-items: center;
+  z-index: 1000;
+}
+
+.icon {
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+}
+
+.icon-link {
+  display: inline-block;
+}
+
+#mute-icon{
+  height: 37px;
+  width: 49px;
 }

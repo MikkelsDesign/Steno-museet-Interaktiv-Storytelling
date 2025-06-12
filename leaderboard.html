@@ -12,15 +12,16 @@
   </head>
   <body>
     <canvas id="webCanvas"></canvas>
-    <img id="burgericon" src="img/burgericon.png" alt="Burger Icon" >
-
-    <nav id="menu">
-      <a id="close" href="#" style="text-align: right">X</a>
-      <a href="index.html" id="start-link">Start forfra</a>
-
-      <!-- Mute-knap -->
-      <button id="mute-button">Slå lyd til</button>
-    </nav>
+    <div class="top-icons">
+      <img src="img/lyd-til.png" alt="Lyd til" class="icon" id="mute-icon">
+      <a href="index.html" class="icon-link">
+        <img src="img/homeknap.png" alt="Hjem" class="icon">
+      </a>
+    </div>
+    
+    <audio id="background-audio" autoplay loop muted>
+      <source src="audio/heartbeat.mp3" type="audio/mpeg">
+    </audio>
 
     <main id="leaderboard">
       <h1>Leaderboard</h1>

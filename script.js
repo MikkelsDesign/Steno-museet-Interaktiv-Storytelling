@@ -1,42 +1,20 @@
-"use strict";
-//BURGERMENU
-let menu = document.querySelector("#menu");
-const burgericon = document.querySelector("#burgericon");
-const closeBtn = document.querySelector("#close");
+"use strict"; 
 
-burgericon.onclick = aabenOgLukMenu;
-closeBtn.onclick = aabenOgLukMenu; // Gør at krydset kan lukke menuen
+let isMuted = false; // Variabel der holder styr på, om lyden er slået fra eller ej
 
-let synlig = false;
+const backgroundAudio = document.getElementById('background-audio'); // Henter lyd-elementet fra DOM'en
 
-function aabenOgLukMenu() {
-  if (!synlig) {
-    menu.style.display = "flex";
-    burgericon.style.display = "none"; // Skjul burgerikon
-    synlig = true;
-  } else {
-    synlig = false;
-    menu.style.display = "none";
-    burgericon.style.display = "block"; // Vis burgerikon igen
+
+document.getElementById('mute-icon').addEventListener('click', () => {
+  isMuted = !isMuted; // Skifter mellem mute og ikke-mute
+
+  const muteIcon = document.getElementById('mute-icon');
+  muteIcon.src = isMuted ? 'img/lyd-fra.png' : 'img/lyd-til.png'; // Opdaterer ikonerne
+ 
+ // muteIcon.alt = isMuted ? 'Lyd-fra' : 'Lyd-til'; // Opdaterer alternativ tekst for tilgængelighed
+
+  // Mute eller afmute baggrundslyden
+  if (backgroundAudio) {
+    backgroundAudio.muted = isMuted;
   }
-}
-
-// mute/unmute---
-const audio = document.getElementById("background-audio");
-const muteButton = document.getElementById("mute-button");
-
-audio.volume = 1.0; // Maks lyd
-audio.muted = false;
-
-muteButton.addEventListener("click", () => {
-  audio.muted = !audio.muted;
-  muteButton.textContent = audio.muted ? "Slå lyd til" : "Slå lyd fra";
-  if (!audio.muted) {
-    audio.play(); // Nogle browsere kræver et play-kald efter unmute
-  }
-});
-
-//start forfra//
-document.getElementById("start-link").addEventListener("click", function () {
-  window.location.href = "index.html"; // linker knappen til index
 });
