@@ -115,3 +115,27 @@ button {
   font-size: 1rem;
   line-height: 1.4;
 }
+
+.score-feedback {
+  position: fixed;
+  transform: translate(-50%, -50%);
+  font-size: 48px;
+  font-weight: bold;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.6);
+  padding: 7px 13px;
+  border-radius: 35px;
+  text-shadow: 0 0 5px black;
+  pointer-events: none;
+  z-index: 1000;
+  opacity: 1;
+  transition: opacity 0.5s ease;
+}
+
+.score-feedback.good {
+  background-color: rgba(0, 200, 0, 0.8);
+}
+
+.score-feedback.enemy {
+  background-color: rgba(200, 0, 0, 0.8);
+}

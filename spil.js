@@ -102,8 +102,38 @@ function initGame() {
     document.querySelectorAll(".block").forEach((block) => {
       block.style.top = parseFloat(block.style.top) + 6 + "px"; //hastighed til png
       if (collides(block, player)) {
-        score += block.classList.contains("good") ? 1 : -1;
-        block.remove();
+        const isGood = block.classList.contains("good");
+        score += isGood ? 1 : -1;
+      
+        // FLASH the block (optional)
+        block.style.transition = "background-color 0.2s";
+        block.style.backgroundColor = isGood ? "rgba(0,255,0,0.5)" : "rgba(255,0,0,0.5)";
+      
+        // SIMPLE effect on heart:
+        const feedback = document.createElement("div");
+        feedback.className = "score-feedback " + (isGood ? "good" : "enemy");
+        feedback.textContent = isGood ? "+1" : "-1";
+      
+        // Put feedback in the game overlay, not inside player (safer cross-browser)
+        const game = document.getElementById("game");
+        game.appendChild(feedback);
+      
+        // Position feedback over player:
+        const playerRect = player.getBoundingClientRect();
+        feedback.style.left = playerRect.left + playerRect.width / 2 + "px";
+        feedback.style.top = playerRect.top + playerRect.height / 2 + "px";
+      
+        // Fade out after 0.5 sec
+        setTimeout(() => {
+          feedback.remove();
+        }, 500);
+      
+        // Remove block after short delay
+        setTimeout(() => {
+          block.remove();
+        }, 200);
+      
+      
       } else if (parseFloat(block.style.top) > window.innerHeight) {
         block.remove();
       }
